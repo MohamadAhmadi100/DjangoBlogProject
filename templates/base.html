@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>وبلاگ جنگو</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.rtl.min.css"
+          integrity="sha384-4dNpRvNX0c/TdYEbYup8qbjvjaMrgUPh+g4I03CnNtANuv+VAvPL6LqdwzZKV38G" crossorigin="anonymous">
+    {% block style_content %}
+    {% endblock style_content %}
+</head>
+<body>
+{% include 'includes/navbar.html' %}
+
+<div class="jumbotron">
+    {% include 'includes/messages.html' %}
+    {% block content %}
+
+    {% endblock content %}
+</div>
+
+</body>
+</html>

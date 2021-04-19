@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="d-flex justify-content-center p-5 text-light">
+        <div class="p-3 d-flex justify-content-center bg-primary col-md-4 rounded">
+            <form method="post" class="form-group" novalidate>
+                {{ form.as_p }} {% csrf_token %}
+                <input type="submit" class="form-control" value="ورود">
+            </form>
+        </div>
+    </div>
+{% endblock content %}
+

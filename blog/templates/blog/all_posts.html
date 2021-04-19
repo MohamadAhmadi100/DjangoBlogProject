@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="container row mt-5 mx-5">
+        <div class="card rounded col-md-8 mx-4 p-3">
+            {% for post in all_posts %}
+                <div class="border border-info rounded px-3">
+                    <h3 class="card-body"><a class="text-info"
+                                             href="{{ post.get_absolute_url }}"> {{ post.title }}</a></h3>
+                    <small>نویسنده: {{ post.writer }} - زمان انتشار: {{ post.publish_date.date|timesince }} قبل
+                        <hr>
+                    </small>
+                    <div class="vh-5">{{ post.body|safe|truncatewords:"50" }}<a
+                            href="{{ post.get_absolute_url }}">ادامه</a></div>
+                    <br>
+                </div>
+                <br>
+            {% endfor %}
+        </div>
+        <div class="col-md-3 bg-secondary rounded"></div>
+    </div>
+{% endblock content %}
